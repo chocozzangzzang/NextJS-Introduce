@@ -5,10 +5,10 @@ import MovieInfo, { getMovie } from "../../../../components/movie-info"
 import { Suspense } from "react"
 
 interface IParams {
-    params : {id : string},
+    params: {id: string};
 }
 
-export async function generateMetadata({params : {id}} : IParams) {
+export async function generateMetadata({ params: { id } }: IParams) {
     const movie = await getMovie(id);
 
     return {
@@ -20,8 +20,7 @@ export async function generateMetadata({params : {id}} : IParams) {
 //     title : "Movie Detail",
 // }
 
-export default async function MovieDetailPage(
-    {params : {id}} : IParams) {
+export default async function MovieDetailPage({ params: { id } }: IParams) {
 
     return (
         <div>
@@ -36,3 +35,5 @@ export default async function MovieDetailPage(
         </div>
     )
 }
+
+export const runtime = "edge"
