@@ -20,8 +20,13 @@ export default async function HomePage() {
     return (
         <div className={styles.container}>
             {movies.map((movie) => (
-                <Movie key={movie.id} id={movie.id} 
-                poster_path={movie.poster_path} title={movie.title}/>   
+                <Movie 
+                key={movie.id} 
+                id={movie.id} 
+                poster_path={movie.poster_path} 
+                title={movie.title}
+                adult={movie.adult}
+                />   
             ))}
         </div>
     )

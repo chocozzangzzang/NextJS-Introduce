@@ -8,9 +8,10 @@ interface IMovieProps {
     title : string,
     id : string,
     poster_path : string,
+    adult : boolean,
 }
 
-export default function Movie({title, id, poster_path} : IMovieProps) {
+export default function Movie({title, id, poster_path, adult} : IMovieProps) {
     const router  = useRouter();
     const onClick = () => {
         router.push(`/movies/${id}`);

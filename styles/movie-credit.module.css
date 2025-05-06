@@ -1,0 +1,50 @@
+.totalContainer {
+    width : 80%;
+    margin : 0 auto;
+    padding : 20px;
+    justify-content: center;
+}
+
+.imgBox {
+    width: 120px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 12px;
+    transition: transform 0.2s;
+  }
+
+  .title {
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+
+  .creditContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .titleBox {
+    width: 80px;
+    text-align : center;
+    margin : 0 auto;
+  }
+
+  .realName {
+    font-weight: 700;
+    color : #fff;
+  }
+
+  .characterName {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .allActors {
+    display: flex;
+    justify-content: center;  /* 가로 가운데 */
+    align-items: center;      /* 세로 가운데 */
+    height: 100%;            /* 높이 있어야 세로 가운데 정렬됨 */
+  }
