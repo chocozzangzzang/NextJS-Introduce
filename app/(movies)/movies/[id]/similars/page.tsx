@@ -15,6 +15,14 @@ async function getSimilars(id : string) {
     return json;
 }
 
+export async function generateMetadata({ params : {id}} : IParams) {
+    const movie = await getMovie(id);
+
+    return {
+        title : "Similars of " + movie.title,  
+    }
+}
+
 export default async function SimilarMovies({params : {id}} : IParams) {
     const similars = await getSimilars(id);
     const movie = await getMovie(id);
@@ -23,7 +31,7 @@ export default async function SimilarMovies({params : {id}} : IParams) {
         <div className={styles.wrapper}>
             <div className={styles.topDiv}>
                 <Link prefetch href={`/movies/${id}`}>&larr;Back</Link>
-                <h5 className={styles.title}>Credits of [ {movieName} ]</h5>
+                <h5 className={styles.title}>Similars of [ {movieName} ]</h5>
             </div>
             <div className={styles.container}>
             {similars.map((similar) => (
