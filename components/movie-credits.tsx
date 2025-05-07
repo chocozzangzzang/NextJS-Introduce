@@ -1,6 +1,7 @@
 import { getMovie } from "./movie-info";
 import styles from "../styles/movie-credit.module.css";
 import { API_URL } from "../app/constant";
+import Link from "next/link";
 
 export async function getTopCredits(id : string) {
     const response = await fetch(`${API_URL}/${id}/credits`);
@@ -29,7 +30,9 @@ export default async function MovieCredits({id} : {id : string}) {
                     )
                 })
             }
-            <p className={styles.allActors}>all actors &rarr;</p>
+            <div className={styles.allActors}>
+                <Link prefetch href={`/movies/${id}/credits`}>all actors &rarr;</Link>
+            </div>       
             </div>
         </div>
     );
